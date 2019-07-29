@@ -13,7 +13,7 @@ export async function main(event, context) {
       difficulty: data.difficulty,
       date_created: new Date().toLocaleString("en-US", {timeZone: "America/Denver"}).toString(),
       intervals: data.intervals,
-      sett: data.sett,
+      set: data.set,
       tags: data.tags,
       yardage: data.yardage
     }
