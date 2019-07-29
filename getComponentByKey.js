@@ -6,8 +6,8 @@ export async function main(event, context) {
     TableName: "swim_components_table",
     // 'Key' defines the partition key and sort key of the item to be retrieved
     Key: {
-      userId: event.pathParameters.username,
-      noteId: event.pathParameters.component_id
+      username: event.pathParameters.username,
+      component_id: event.pathParameters.component_id
     }
   };
 

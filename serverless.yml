@@ -39,13 +39,18 @@ functions:
           cors: true
           authorizer: aws_iam
   getSwimComponentByKey:
-    # Defines an HTTP API endpoint that calls the main function in get.js
-    # - path: url path is /notes/{id}
-    # - method: GET request
     handler: getComponentByKey.main
     events:
       - http:
           path: components/{username}/{component_id}
+          method: get
+          cors: true
+          authorizer: aws_iam
+  getRandomSwimComponent:
+    handler: getRandomSwimComponent.main
+    events:
+      - http:
+          path: components/random
           method: get
           cors: true
           authorizer: aws_iam
