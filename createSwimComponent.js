@@ -15,7 +15,9 @@ export async function main(event, context) {
       intervals: data.intervals,
       set: data.set,
       tags: data.tags,
-      yardage: data.yardage
+      yardage: data.yardage,
+      likes: 0,
+      dislikes: 0
     }
   };
 
