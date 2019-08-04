@@ -38,6 +38,30 @@ functions:
           method: post
           cors: true
           authorizer: aws_iam
+  addNewUser:
+    handler: addNewUser.main
+    events:
+      - http:
+          path: users
+          method: post
+          cors: true
+          authorizer: aws_iam
+  updateSwimComponentLikes:
+    handler: updateSwimComponentLikes.main
+    events:
+      - http:
+          path: components/update/likes
+          method: post
+          cors: true
+          authorizer: aws_iam
+  updateUser:
+    handler: updateUser.main
+    events:
+      - http:
+          path: users/update
+          method: post
+          cors: true
+          authorizer: aws_iam
   getSwimComponentByKey:
     handler: getComponentByKey.main
     events:
@@ -51,6 +75,14 @@ functions:
     events:
       - http:
           path: components/random
+          method: get
+          cors: true
+          authorizer: aws_iam
+  getUser:
+    handler: getUser.main
+    events:
+      - http:
+          path: user/{username}
           method: get
           cors: true
           authorizer: aws_iam
