@@ -1,6 +1,7 @@
 import * as dynamoDbLib from "./libs/dynamodb-lib";
 import { success, failure } from "./libs/response-lib";
 
+//instantiates a new user in the database
 export async function main(event, context) {
   const data = JSON.parse(event.body);
   const params = {

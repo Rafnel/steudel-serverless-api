@@ -27,16 +27,4 @@ export async function main(event, context) {
     } else {
       return failure({ status: false, error: "Item not found." });
     }
-    /*return dynamoDb.query(params, function(err, data){
-        if(err){
-            return failure("failed DynamoDB query");
-        }
-        else{
-            let randomItemNumber = Math.floor(Math.random() * (data.Items.length - 0 + 1) + 0);
-
-            let randomUsername = data.Items[randomItemNumber].username;
-            let randomUUID = data.Items[randomItemNumber].component_id;
-
-        }
-    });*/
 }
