@@ -70,6 +70,14 @@ functions:
           method: get
           cors: true
           authorizer: aws_iam
+  getSortedSwimComponentsBySet:
+    handler: getSortedSwimComponentsBySet.main
+    events:
+      - http:
+          path: components/set
+          method: post
+          cors: true
+          authorizer: aws_iam
   getRandomSwimComponent:
     handler: getRandomSwimComponent.main
     events:
