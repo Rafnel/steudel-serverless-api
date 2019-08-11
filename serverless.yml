@@ -38,6 +38,14 @@ functions:
           method: post
           cors: true
           authorizer: aws_iam
+  createSwimWorkout:
+    handler: createSwimWorkout.main
+    events:
+      - http:
+          path: workouts
+          method: post
+          cors: true
+          authorizer: aws_iam
   addNewUser:
     handler: addNewUser.main
     events:
