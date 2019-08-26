@@ -94,6 +94,14 @@ functions:
           method: post
           cors: true
           authorizer: aws_iam
+  getAllSwimWorkoutsFromUser:
+    handler: getAllSwimWorkoutsFromUser.main
+    events:
+      - http:
+          path: workouts/user
+          method: post
+          cors: true
+          authorizer: aws_iam
   getRandomSwimComponent:
     handler: getRandomSwimComponent.main
     events:
