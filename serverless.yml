@@ -78,6 +78,14 @@ functions:
           method: get
           cors: true
           authorizer: aws_iam
+  getWorkoutByKey:
+    handler: getWorkoutByKey.main
+    events:
+      - http:
+          path: workouts/{username}/{workout_id}
+          method: get
+          cors: true
+          authorizer: aws_iam
   getSortedSwimComponentsBySet:
     handler: getSortedSwimComponentsBySet.main
     events:
