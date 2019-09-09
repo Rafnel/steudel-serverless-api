@@ -11,7 +11,7 @@ export async function main(event, context) {
       component_id: uuid.v1(),
       component_body: data.component_body,
       difficulty: data.difficulty,
-      date_created: new Date().toLocaleString("en-US", {timeZone: "America/Denver"}).toString(),
+      date_created: new Date().toLocaleString("en-US", {timeZone: "America/Chicago"}).toString(),
       intervals: data.intervals,
       set: data.set,
       tags: data.tags,

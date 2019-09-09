@@ -14,7 +14,7 @@ export async function main(event, context) {
       mainset: data.mainset,
       cooldown: data.cooldown,
       difficulty: data.difficulty,
-      date_created: new Date().toLocaleString("en-US", {timeZone: "America/Denver"}).toString(),
+      date_created: new Date().toLocaleString("en-US", {timeZone: "America/Chicago"}).toString(),
       yardage: data.yardage,
       likes: 0
     }
