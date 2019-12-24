@@ -1,3 +1,5 @@
+org: zacharysteudel
+app: rafnel-api-app
 # NOTE: update this with your service name
 service: rafnel-api
 
@@ -46,6 +48,22 @@ functions:
           method: post
           cors: true
           authorizer: aws_iam
+  createSwimWorkoutFolder:
+    handler: createSwimWorkoutFolder.main
+    events:
+      - http:
+          path: folders
+          method: post
+          cors: true
+          authorizer: aws_iam
+  deleteSwimWorkoutFolder:
+    handler: deleteSwimWorkoutFolder.main
+    events:
+      - http:
+          path: folders/delete
+          method: post
+          cors: true
+          authorizer: aws_iam
   addNewUser:
     handler: addNewUser.main
     events:
@@ -59,6 +77,22 @@ functions:
     events:
       - http:
           path: components/update/likes
+          method: post
+          cors: true
+          authorizer: aws_iam
+  updateSwimWorkoutFolder:
+    handler: updateSwimWorkoutFolder.main
+    events:
+      - http:
+          path: folders/update
+          method: post
+          cors: true
+          authorizer: aws_iam
+  updateWorkoutUsedDate:
+    handler: updateWorkoutUsedDate.main
+    events:
+      - http:
+          path: workout/update/date
           method: post
           cors: true
           authorizer: aws_iam
@@ -99,6 +133,14 @@ functions:
     events:
       - http:
           path: workouts/user
+          method: post
+          cors: true
+          authorizer: aws_iam
+  getSwimWorkoutsInFolder:
+    handler: getSwimWorkoutsInFolder.main
+    events:
+      - http:
+          path: folders/get-workouts
           method: post
           cors: true
           authorizer: aws_iam
