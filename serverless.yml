@@ -136,6 +136,22 @@ functions:
           method: post
           cors: true
           authorizer: aws_iam
+  getSwimFoldersOfUser:
+    handler: getSwimFoldersOfUser.main
+    events:
+      - http:
+          path: folders/user
+          method: post
+          cors: true
+          authorizer: aws_iam
+  getChildSwimFolders:
+    handler: getChildSwimFolders.main
+    events:
+      - http:
+          path: folders/get-parent
+          method: post
+          cors: true
+          authorizer: aws_iam
   getSwimWorkoutsInFolder:
     handler: getSwimWorkoutsInFolder.main
     events:

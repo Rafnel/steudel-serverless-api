@@ -1,15 +1,14 @@
 import { success, failure } from "./libs/response-lib";
 import * as dynamoDbLib from "./libs/dynamodb-lib";
 
-//gets user swim folder
+//gets all swim folders that the user owns.
 export async function main(event, context) {
     const data = JSON.parse(event.body);
     const params = {
         TableName: "swim_workout_folders",
-        KeyConditionExpression: "owner_username = :owner_username and folder_name = :folder_name",
+        KeyConditionExpression: "owner_username = :owner_username",
         ExpressionAttributeValues: {
-            ":owner_username": data.owner_username,
-            ":folder_name": data.folder_name
+            ":owner_username": data.owner_username
         }
     };
 
